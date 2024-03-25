@@ -1,4 +1,5 @@
 ﻿using SDL2;
+using static SDL2.SDL;
 
 class Input
 {
@@ -48,6 +49,10 @@ class Input
     }
     public static bool GetKeyDown(SDL.SDL_Keycode checkKeycode)
     {
+/*
+        int key = 0;
+        uint[] keyboardState = SDL.SDL_GetKeyboardState(out key);*/
+
         return (Engine.GetInstance().myEvent.key.keysym.sym == checkKeycode 
             && Engine.GetInstance().myEvent.type == SDL.SDL_EventType.SDL_KEYDOWN);
     }
